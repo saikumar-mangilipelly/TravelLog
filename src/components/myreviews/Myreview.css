@@ -1,0 +1,20 @@
+.reviewimg{
+    width: 200px!important;
+    height: 200px!important;
+    display: block;
+    margin: auto;
+}
+.reviewhead{
+    font-family: 'Bebas Neue';
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 4rem;
+    font-weight: bolder;
+}
+.noreviewhead{
+    font-family: 'Bebas Neue';
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 12rem;
+    font-weight: lighter;
+}

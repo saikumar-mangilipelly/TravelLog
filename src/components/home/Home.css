@@ -1,0 +1,48 @@
+.homeimg{
+    background-image: url('../../Assests/homebg.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    overflow-y: scroll;
+    height: 100vh;
+}
+.mainsen{
+    font-family: 'Anton', sans-serif;
+    color: white;
+    margin-top: 12rem;
+    font-size: 4rem;
+    font-weight: bolder;
+}
+.nextsen{
+    font-family: 'Great Vibes';
+    font-size: 2rem;
+    color: white;
+    margin-top: 2rem;
+}
+.homebtn{
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+.thirdsen{
+    font-size: 2em;
+    color: white;
+    font-style: italic;
+    font-family: 'Great Vibes';
+    border-right: 3px solid;
+    overflow: hidden;
+    white-space: nowrap;
+    width: max-content;
+    animation: typing 4s steps(32), blink .4s step-end infinite alternate;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 31.5% }
+}
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+  

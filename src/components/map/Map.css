@@ -1,0 +1,21 @@
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+}
+.leaflet-control-zoom{
+    margin-top: 4rem!important;
+}
+.leaflet-popup-content-wrapper {
+    width: 300px!important;
+    overflow-y:hidden;
+    padding: 15px;
+}
+.leaflet-popup-content{
+    margin: 0px;
+}
+.reviewform{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

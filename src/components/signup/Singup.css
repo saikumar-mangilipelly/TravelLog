@@ -1,0 +1,40 @@
+.sign{
+    background-image: url('../../Assests/bgpic1.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: absolute;
+    overflow-y: scroll;
+}
+.scard{
+    margin-top: 7rem;
+    box-shadow: 5px 10px 30px;
+    background:hsla(0,0%,100%,0.15);
+    backdrop-filter: blur(30px);
+}
+.sname{
+    font-size: 2.5rem;
+}
+.signupgap{
+    margin-top: 2rem;
+    gap: 4rem;
+}
+@media screen and (max-width:576px){
+    .signupgap{
+        gap: 0rem;
+    }
+    .sname{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width:992px) and (min-width:577px){
+    .signupgap{
+        gap: 1rem;
+    }
+    .scard{
+        margin-top: 5rem;
+    }
+}
