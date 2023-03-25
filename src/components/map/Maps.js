@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useState, useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import './Map.css'
-import { addreview,getallreviews } from '../../redux/actions'
+import { addreview,fetchData,getallreviews } from '../../redux/actions'
 
 function Maps() {
   let { username,review,yourreviews} = useSelector(state => state.loginReducer)
@@ -19,7 +19,7 @@ function Maps() {
     setnewplace({ lat, lng })
   }
 
-  useEffect(() => {
+  useEffect(() => {    
     dispatch(getallreviews())
   }, [yourreviews])
     

@@ -11,7 +11,7 @@ function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm()
     let dispatch = useDispatch()
     const navigate = useNavigate()
-    localStorage.clear()
+    // localStorage.clear()
     const { issuccess} = useSelector(state => state.loginReducer)
     const onSubmit = (loginuserdata) => {
       dispatch(login(loginuserdata))

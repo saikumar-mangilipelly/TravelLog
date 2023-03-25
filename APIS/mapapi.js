@@ -108,6 +108,20 @@ mapapi.delete('/deletereview/:id', expressAsyncHandle(async (request, response) 
     catch (err) { console.log(err) }
 }))
 
+mapapi.delete('/deletemany/:name',expressAsyncHandle(async(request,response)=>{
+    let mapcollection=request.app.get("mapcollection")    
+    let username=request.params.name    
+    try{
+        let update={$pull:{reviews:{user:username}}}
+        let deletedreviews=await mapcollection.updateMany({"reviews.user":username},update)
+        await mapcollection.deleteMany({ reviews: { $exists: true, $size: 0 } })
+        if(deletedreviews.modifiedCount>0)
+            response.send({message:"Deleted All Successfully"})
+        else
+            response.send({message:"Deletion Unsuccessful"})
+    }
+    catch(err){console.log(err)}
+}))
 mapapi.get('/privateroute', tokenverify, (request, response) => {
     response.send({ message: "success" })
 })

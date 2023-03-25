@@ -7,11 +7,13 @@ export const REVIEW = 'REVIEW'
 export const GET_REVIEWS = 'GET_REVIEWS'
 export const YOUR_REVIEWS = 'YOUR_REVIEWS'
 export const DELETE_REVIEW = 'DELETE_REVIEW'
+export const DELETE_MANY='DELETE_MANY'
 export const login = (data) => {
     return async dispatch => {
         await axios.post('http://localhost:5000/user/login', data)
             .then(response => {
                 if (response.data.message === "Login Successful") {
+                    localStorage.setItem('loginDetails', JSON.stringify(data.username));
                     toast.success(response.data.message, {
                         position: "top-center",
                         autoClose: 2000,
@@ -20,7 +22,6 @@ export const login = (data) => {
                         draggable: true,
                         theme: "colored",
                     })
-                    localStorage.setItem('loginDetails', JSON.stringify(data.username));
                     return dispatch({
                         type: LOGIN,
                         payload: data.username
@@ -131,9 +132,27 @@ export const deletereview = (id) => {
                     theme: "colored",
                 })
                 return dispatch({
-                    type: DELETE_REVIEW,
-                    payload: response.data
+                    type: DELETE_REVIEW                    
                 })
             })
+    }
+}
+export const deleteallreviews=(username)=>{
+    return async dispatch=>{
+        await axios.delete(`http://localhost:5000/mappin/deletemany/${username}`)
+        .then(response=>{
+            toast.success(response.data.message, {
+                position: "top-center",
+                autoClose: 2000,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                theme: "colored",
+            })
+            return dispatch({
+                type:DELETE_MANY                
+            })
+        })
+        .catch(err=>console.log(err))
     }
 }

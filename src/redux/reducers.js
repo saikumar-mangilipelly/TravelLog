@@ -1,4 +1,4 @@
-import {FETCH_DATA, GET_REVIEWS,REVIEW, LOGIN,LOGOUT,YOUR_REVIEWS, DELETE_REVIEW} from './actions' 
+import {FETCH_DATA, GET_REVIEWS,REVIEW, LOGIN,LOGOUT,YOUR_REVIEWS, DELETE_REVIEW, DELETE_MANY} from './actions' 
 const initialState = {
     username : "",
     issuccess : false,
@@ -34,6 +34,8 @@ function loginReducer (state=initialState, action) {
             else    
                 return{...state,yourreviwes:[],reviewpresent:false}
         case DELETE_REVIEW:            
+            return state;
+        case DELETE_MANY:
             return state;
         default:
             return state;
