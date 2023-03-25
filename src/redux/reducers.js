@@ -1,4 +1,4 @@
-import {FETCH_DATA, GET_REVIEWS,REVIEW, LOGIN,LOGOUT,YOUR_REVIEWS, DELETE_REVIEW} from './actions'    
+import {FETCH_DATA, GET_REVIEWS,REVIEW, LOGIN,LOGOUT,YOUR_REVIEWS, DELETE_REVIEW} from './actions' 
 const initialState = {
     username : "",
     issuccess : false,
@@ -18,8 +18,8 @@ function loginReducer (state=initialState, action) {
         case LOGOUT:
             return{...state,username:"",issuccess:false}
         case REVIEW:
-            if (action.payload.message === "Data inserted")
-                return { ...state, review: [...state.review,action.payload.payload.newmapobj] }
+            if (action.payload.message === "Review Added Successfully")
+                return { ...state, review: [...state.review,action.payload.payload.newmapobj] }        
             else{
                 let newmapreview=action.payload.payload.newmapobj.reviews[0]                            
                 let temp = state.review.find(e => JSON.stringify(e.pin) === JSON.stringify(action.payload.payload.newmapobj.pin))

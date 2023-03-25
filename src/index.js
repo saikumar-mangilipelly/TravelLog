@@ -5,6 +5,7 @@ import App from './App';
 import {Store} from './redux/Store'
 import {Provider} from 'react-redux'
 import reportWebVitals from './reportWebVitals';
+import 'react-toastify/dist/ReactToastify.css';
 import {BrowserRouter} from 'react-router-dom'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

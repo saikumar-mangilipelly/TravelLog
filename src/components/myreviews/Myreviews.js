@@ -7,10 +7,10 @@ import './Myreview.css'
 function Myreviews() {
   let dispatch = useDispatch()
   let navigate=useNavigate()
+  let { username, reviewpresent ,yourreviews } = useSelector(state => state.loginReducer)
   function reviewbuttonclick(id) {    
     dispatch(deletereview(id))
   }
-  let { username, reviewpresent ,yourreviews } = useSelector(state => state.loginReducer)
   useEffect(() => {
     dispatch(getyourreviews(username))
   }, [username,yourreviews])  

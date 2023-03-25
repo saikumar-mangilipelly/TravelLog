@@ -47,11 +47,11 @@ mapapi.post('/mapreview', upload.single("photo"), expressAsyncHandle(async (requ
     try {
         if (isthere === 0) {
             await mapcollection.insertOne({ pin: [lat, long], reviews: [mapobj] })
-            response.send({ message: "Data inserted", payload: { newmapobj } })
+            response.send({ message: "Review Added Successfully", payload: { newmapobj } })
         }
         else {
             await mapcollection.updateOne({ pin: [lat, long] }, { $push: { reviews: mapobj } })
-            response.send({ message: "Data updated", payload: { newmapobj } })
+            response.send({ message: "Review Updated", payload: { newmapobj } })
         }
     }
     catch (error) {

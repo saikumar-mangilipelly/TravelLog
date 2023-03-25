@@ -18,7 +18,7 @@ userapi.post('/login',expressAsyncHandler(async(request,response)=>{
     //finding user exists or not
     let userdb=await usercollection.findOne({username:usercred.username})
     if(userdb===null){
-        response.send({message:"Invalid User"})
+        response.send({message:"User Not Found"})
     }
     else{
         //comparing password
@@ -30,7 +30,7 @@ userapi.post('/login',expressAsyncHandler(async(request,response)=>{
             //creating token
             let token=jwt.sign({username:userdb.username},process.env.Secret_key,{expiresIn:11000})
             //sending token to user
-            response.send({message:"success",payload:token,userobj:userdb})
+            response.send({message:"Login Successful",payload:token,userobj:userdb})
         }
     }
 }))
@@ -45,7 +45,7 @@ userapi.post('/register',expressAsyncHandler(async(request,response)=>{
     //searching for the user
     let userobj=await usercollection.findOne({username:newuserobj.username})
     if(userobj!=null){
-        response.send({message:"user already existed.."})
+        response.send({message:"User Already Exists"})
     }
     else{
         //hashing the password
@@ -53,7 +53,7 @@ userapi.post('/register',expressAsyncHandler(async(request,response)=>{
        newuserobj.password=hashedpassword
        //inserting into the usercollection
        await usercollection.insertOne(newuserobj)
-       response.send({message:"new user created"})
+       response.send({message:"User Created Successfully"})
     }
 }))
 
