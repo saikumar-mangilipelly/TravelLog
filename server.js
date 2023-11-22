@@ -26,8 +26,8 @@ mongoclient.connect(process.env.DB_connection_url)
 .catch(err=>console.log("err in database connection",err))
 
 //importing userapi
-const userapi=require('../travellog/APIS/Userapi')
-const mapapi=require('../travellog/APIS/mapapi')
+const userapi=require('../Travellog/APIS/Userapi')
+const mapapi=require('../Travellog/APIS/mapapi')
 //executing middleware according to path
 app.use('/user',userapi)
 app.use('/mappin',mapapi)
