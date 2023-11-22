@@ -41,8 +41,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "react-scripts build",
+    "start": "nodeomon server.js",
+    "build": "npm i",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
