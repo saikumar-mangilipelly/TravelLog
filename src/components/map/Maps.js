@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useState, useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import './Map.css'
-import { addreview,fetchData,getallreviews } from '../../redux/actions'
+import { addreview,getallreviews } from '../../redux/actions'
 
 function Maps() {
   let { username,review,yourreviews} = useSelector(state => state.loginReducer)
@@ -113,7 +113,7 @@ function Maps() {
               <input type="text" className='form-control' placeholder='enter place' {...register("placename")} />
               <h5 className='fw-bold'>review</h5>
               <textarea placeholder='give review' className='form-control' {...register("review")} />
-              <button type='submit' className='btn btn-outline-dark'>Add review</button>
+              <button type='submit' className='btn btn-outline-dark'>Add review</button>  
             </form>
           </Popup>
         ) : <div className="modal fade" id="reviewmodal" tabindex="-1" aria-labelledby="reviewmodallabel" aria-hidden="true">
